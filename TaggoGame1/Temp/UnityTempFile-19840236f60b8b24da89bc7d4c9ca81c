@@ -1,6 +1,6 @@
 /target:library
 /nowarn:0169
-/out:Temp/Unity.Timeline.dll
+/out:Temp/Unity.TextMeshPro.dll
 /debug:portable
 /optimize-
 /nostdlib+
@@ -17,8 +17,6 @@
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll"
@@ -72,9 +70,10 @@
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
-/reference:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/Microsoft.Win32.Primitives.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.AppContext.dll"
@@ -231,6 +230,7 @@
 /define:ENABLE_CLOUD_SERVICES_ADS
 /define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
 /define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+/define:ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING
 /define:ENABLE_CLOUD_SERVICES_PURCHASING
 /define:ENABLE_CLOUD_SERVICES_ANALYTICS
 /define:ENABLE_CLOUD_SERVICES_UNET
@@ -244,24 +244,29 @@
 /define:ENABLE_MANAGED_TRANSFORM_JOBS
 /define:ENABLE_MANAGED_ANIMATION_JOBS
 /define:ENABLE_MANAGED_AUDIO_JOBS
+/define:ENABLE_RUNTIME_PERMISSIONS
+/define:ENABLE_ENGINE_CODE_STRIPPING
+/define:ENABLE_ONSCREEN_KEYBOARD
 /define:INCLUDE_DYNAMIC_GI
 /define:ENABLE_MONO_BDWGC
 /define:ENABLE_SCRIPTING_GC_WBARRIERS
 /define:PLATFORM_SUPPORTS_MONO
-/define:RENDER_SOFTWARE_CURSOR
 /define:ENABLE_VIDEO
-/define:PLATFORM_STANDALONE
-/define:PLATFORM_STANDALONE_WIN
-/define:UNITY_STANDALONE_WIN
-/define:UNITY_STANDALONE
-/define:ENABLE_RUNTIME_GI
-/define:ENABLE_MOVIES
+/define:PLATFORM_ANDROID
+/define:UNITY_ANDROID
+/define:UNITY_ANDROID_API
+/define:ENABLE_EGL
 /define:ENABLE_NETWORK
+/define:ENABLE_RUNTIME_GI
 /define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
-/define:ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
-/define:ENABLE_CLUSTER_SYNC
-/define:ENABLE_CLUSTERINPUT
-/define:ENABLE_WEBSOCKET_HOST
+/define:PLATFORM_SUPPORTS_ADS_ID
+/define:UNITY_CAN_SHOW_SPLASH_SCREEN
+/define:UNITY_HAS_GOOGLEVR
+/define:UNITY_HAS_TANGO
+/define:ENABLE_SPATIALTRACKING
+/define:UNITY_ASTC_ONLY_DECOMPRESS
+/define:ENABLE_UNITYADS_RUNTIME
+/define:UNITY_UNITYADS_API
 /define:ENABLE_MONO
 /define:NET_STANDARD_2_0
 /define:ENABLE_PROFILER
@@ -274,7 +279,6 @@
 /define:ENABLE_UNITY_COLLECTIONS_CHECKS
 /define:ENABLE_BURST_AOT
 /define:UNITY_TEAM_LICENSE
-/define:ENABLE_VSTU
 /define:ENABLE_CUSTOM_RENDER_TEXTURE
 /define:ENABLE_DIRECTOR
 /define:ENABLE_LOCALIZATION
@@ -285,73 +289,59 @@
 /define:ENABLE_LEGACY_INPUT_MANAGER
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Activation\ActivationMixerPlayable.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Activation\ActivationPlayableAsset.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Activation\ActivationTrack.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Animation\AnimationOutputWeightProcessor.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Animation\AnimationPlayableAsset.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Animation\AnimationPreviewUpdateCallback.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Animation\AnimationTrack.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Animation\ICurvesOwner.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\AssetUpgrade\AnimationPlayableAssetUpgrade.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\AssetUpgrade\AnimationTrackUpgrade.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\AssetUpgrade\ClipUpgrade.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\AssetUpgrade\TimelineUpgrade.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\AssetUpgrade\TrackUpgrade.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Attributes\TrackColorAttribute.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Audio\AudioClipProperties.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Audio\AudioMixerProperties.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Audio\AudioPlayableAsset.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Audio\AudioTrack.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\ClipCaps.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Control\ControlPlayableAsset.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Control\ControlTrack.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\DiscreteTime.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Evaluation\InfiniteRuntimeClip.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Evaluation\IntervalTree.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Evaluation\RuntimeClip.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Evaluation\RuntimeClipBase.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Evaluation\RuntimeElement.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Evaluation\ScheduleRuntimeClip.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\IMarker.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\INotificationOptionProvider.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\Marker.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\MarkerList.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\MarkerTrack.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\SignalTrack.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\Signals\CustomSignalEventDrawer.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\Signals\SignalAsset.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\Signals\SignalEmitter.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\Signals\SignalReceiver.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Extensions\TrackExtensions.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\GroupTrack.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\ILayerable.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\ActivationControlPlayable.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\BasicScriptPlayable.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\DirectorControlPlayable.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\ITimeControl.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\NotificationFlags.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\ParticleControlPlayable.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\PrefabControlPlayable.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\TimeControlPlayable.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\TimeNotificationBehaviour.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Properties\AssemblyInfo.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Scripting\PlayableTrack.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Timeline.deprecated.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\TimelineAsset.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\TimelineAsset_CreateRemove.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\TimelineAttributes.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\TimelineClip.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\TimelinePlayable.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\TrackAsset.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\AnimationPreviewUtilities.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\AnimatorBindingCache.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\Extrapolation.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\HashUtility.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\IPropertyCollector.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\IPropertyPreview.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\NotificationUtilities.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\TimeUtility.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\TimelineCreateUtilities.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\TimelineUndo.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\WeightUtility.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\AssemblyInfo.cs.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\FastAction.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\MaterialReferenceManager.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Asset.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Character.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_CharacterInfo.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_ColorGradient.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_CoroutineTween.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_DefaultControls.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Dropdown.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_EditorResourceManager.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_FontAsset.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_FontAssetCommon.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_FontAssetUtilities.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_FontFeatureTable.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_FontFeaturesCommon.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_InputField.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_InputValidator.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_LineInfo.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_ListPool.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_MaterialManager.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_MeshInfo.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_ObjectPool.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_PackageResourceImporter.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_RichTextTagStack.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_RichTextTagsCommon.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_ScrollbarEventHandler.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SelectionCaret.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Settings.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_ShaderUtilities.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Sprite.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SpriteAnimator.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SpriteAsset.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SpriteAssetImportFormats.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SpriteCharacter.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SpriteGlyph.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Style.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_StyleSheet.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SubMesh.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SubMeshUI.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Text.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_TextElement.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_TextElement_Legacy.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_TextInfo.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_TextParsingUtilities.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_TextUtilities.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_UpdateManager.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_UpdateRegistery.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMPro_EventManager.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMPro_ExtensionMethods.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMPro_MeshUtilities.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMPro_Private.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMPro_UGUI_Private.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TextContainer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TextMeshPro.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TextMeshProUGUI.cs

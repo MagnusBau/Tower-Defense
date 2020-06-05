@@ -1,14 +1,16 @@
 /target:library
 /nowarn:0169
-/out:Temp/Unity.Rider.Editor.dll
+/out:Temp/Unity.TextMeshPro.Editor.dll
 /debug:portable
 /optimize-
 /nostdlib+
 /preferreduilang:en-US
 /langversion:latest
-/reference:Library/ScriptAssemblies/UnityEditor.TestRunner.dll
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.dll
 /reference:Library/ScriptAssemblies/UnityEditor.UI.dll
 /reference:Library/ScriptAssemblies/UnityEngine.UI.dll
+/reference:Library/ScriptAssemblies/UnityEditor.TestRunner.dll
+/reference:Library/ScriptAssemblies/UnityEngine.TestRunner.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -73,10 +75,11 @@
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
-/reference:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
-/reference:C:/Projects/Taggo1/TaggoGame1/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll
+/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll"
+/reference:C:/Users/Mia/TaggoGames/TaggoGame1/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll
+/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Core.dll"
@@ -236,6 +239,7 @@
 /define:ENABLE_CLOUD_SERVICES_ADS
 /define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
 /define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+/define:ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING
 /define:ENABLE_CLOUD_SERVICES_PURCHASING
 /define:ENABLE_CLOUD_SERVICES_ANALYTICS
 /define:ENABLE_CLOUD_SERVICES_UNET
@@ -249,24 +253,29 @@
 /define:ENABLE_MANAGED_TRANSFORM_JOBS
 /define:ENABLE_MANAGED_ANIMATION_JOBS
 /define:ENABLE_MANAGED_AUDIO_JOBS
+/define:ENABLE_RUNTIME_PERMISSIONS
+/define:ENABLE_ENGINE_CODE_STRIPPING
+/define:ENABLE_ONSCREEN_KEYBOARD
 /define:INCLUDE_DYNAMIC_GI
 /define:ENABLE_MONO_BDWGC
 /define:ENABLE_SCRIPTING_GC_WBARRIERS
 /define:PLATFORM_SUPPORTS_MONO
-/define:RENDER_SOFTWARE_CURSOR
 /define:ENABLE_VIDEO
-/define:PLATFORM_STANDALONE
-/define:PLATFORM_STANDALONE_WIN
-/define:UNITY_STANDALONE_WIN
-/define:UNITY_STANDALONE
-/define:ENABLE_RUNTIME_GI
-/define:ENABLE_MOVIES
+/define:PLATFORM_ANDROID
+/define:UNITY_ANDROID
+/define:UNITY_ANDROID_API
+/define:ENABLE_EGL
 /define:ENABLE_NETWORK
+/define:ENABLE_RUNTIME_GI
 /define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
-/define:ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
-/define:ENABLE_CLUSTER_SYNC
-/define:ENABLE_CLUSTERINPUT
-/define:ENABLE_WEBSOCKET_HOST
+/define:PLATFORM_SUPPORTS_ADS_ID
+/define:UNITY_CAN_SHOW_SPLASH_SCREEN
+/define:UNITY_HAS_GOOGLEVR
+/define:UNITY_HAS_TANGO
+/define:ENABLE_SPATIALTRACKING
+/define:UNITY_ASTC_ONLY_DECOMPRESS
+/define:ENABLE_UNITYADS_RUNTIME
+/define:UNITY_UNITYADS_API
 /define:ENABLE_MONO
 /define:NET_4_6
 /define:ENABLE_PROFILER
@@ -279,7 +288,6 @@
 /define:ENABLE_UNITY_COLLECTIONS_CHECKS
 /define:ENABLE_BURST_AOT
 /define:UNITY_TEAM_LICENSE
-/define:ENABLE_VSTU
 /define:ENABLE_CUSTOM_RENDER_TEXTURE
 /define:ENABLE_DIRECTOR
 /define:ENABLE_LOCALIZATION
@@ -288,27 +296,52 @@
 /define:ENABLE_TILEMAP
 /define:ENABLE_TIMELINE
 /define:ENABLE_LEGACY_INPUT_MANAGER
-/define:TEST_FRAMEWORK
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\Discovery.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\EditorPluginInterop.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\LoggingLevel.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\PluginSettings.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\PostProcessors\RiderAssetPostprocessor.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\ProjectGeneration\FileIOProvider.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\ProjectGeneration\GUIDProvider.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\ProjectGeneration\ProjectGeneration.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\RiderInitializer.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\RiderScriptEditor.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\RiderScriptEditorData.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\UnitTesting\CallbackData.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\UnitTesting\CallbackInitializer.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\UnitTesting\RiderTestRunner.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\UnitTesting\TestEvent.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\UnitTesting\TestsCallback.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\Util\CommandLineParser.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\Util\FileSystemUtil.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\Util\LibcNativeInterop.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\Util\RiderMenu.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.ide.rider@1.1.4\Rider\Editor\Util\UnityUtils.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\DropdownOptionListDrawer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\GlyphInfoDrawer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\GlyphMetricsPropertyDrawer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\GlyphRectPropertyDrawer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_BaseEditorPanel.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_BaseShaderGUI.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_BitmapShaderGUI.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_CharacterPropertyDrawer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_ColorGradientAssetMenu.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_ColorGradientEditor.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_DropdownEditor.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_EditorCoroutine.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_EditorPanel.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_EditorUtility.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_FontAssetEditor.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_FontAsset_CreationMenu.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_GlyphPairAdjustmentRecordPropertyDrawer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_GlyphPropertyDrawer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_InputFieldEditor.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_MeshRendererEditor.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_PackageUtilities.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_PostBuildProcessHandler.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_ProjectTextSettings.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_ResourcesLoader.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SDFShaderGUI.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SerializedPropertyHolder.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SettingsEditor.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SpriteAssetEditor.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SpriteAssetImporter.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SpriteAssetMenu.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SpriteCharacterPropertyDrawer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SpriteGlyphPropertyDrawer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_StyleAssetMenu.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_StyleSheetEditor.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SubMeshUI_Editor.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SubMesh_Editor.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_TextAlignmentDrawer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_UIStyleManager.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_UiEditorPanel.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_ContextMenus.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_CreateObjectMenu.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_EditorShaderUtilities.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_FontAssetCreatorWindow.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_FontPlugin.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_SortingLayerHelper.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_TextContainerEditor.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_TexturePostProcessor.cs

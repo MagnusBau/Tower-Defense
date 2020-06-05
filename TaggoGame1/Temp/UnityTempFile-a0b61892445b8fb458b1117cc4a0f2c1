@@ -1,11 +1,13 @@
 /target:library
 /nowarn:0169
-/out:Temp/UnityEngine.TestRunner.dll
+/out:Temp/Unity.Timeline.dll
 /debug:portable
 /optimize-
 /nostdlib+
 /preferreduilang:en-US
 /langversion:latest
+/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
+/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -15,8 +17,6 @@
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll"
@@ -70,10 +70,10 @@
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
-/reference:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
-/reference:C:/Projects/Taggo1/TaggoGame1/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll
+/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/Microsoft.Win32.Primitives.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.AppContext.dll"
@@ -230,6 +230,7 @@
 /define:ENABLE_CLOUD_SERVICES_ADS
 /define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
 /define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+/define:ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING
 /define:ENABLE_CLOUD_SERVICES_PURCHASING
 /define:ENABLE_CLOUD_SERVICES_ANALYTICS
 /define:ENABLE_CLOUD_SERVICES_UNET
@@ -243,24 +244,29 @@
 /define:ENABLE_MANAGED_TRANSFORM_JOBS
 /define:ENABLE_MANAGED_ANIMATION_JOBS
 /define:ENABLE_MANAGED_AUDIO_JOBS
+/define:ENABLE_RUNTIME_PERMISSIONS
+/define:ENABLE_ENGINE_CODE_STRIPPING
+/define:ENABLE_ONSCREEN_KEYBOARD
 /define:INCLUDE_DYNAMIC_GI
 /define:ENABLE_MONO_BDWGC
 /define:ENABLE_SCRIPTING_GC_WBARRIERS
 /define:PLATFORM_SUPPORTS_MONO
-/define:RENDER_SOFTWARE_CURSOR
 /define:ENABLE_VIDEO
-/define:PLATFORM_STANDALONE
-/define:PLATFORM_STANDALONE_WIN
-/define:UNITY_STANDALONE_WIN
-/define:UNITY_STANDALONE
-/define:ENABLE_RUNTIME_GI
-/define:ENABLE_MOVIES
+/define:PLATFORM_ANDROID
+/define:UNITY_ANDROID
+/define:UNITY_ANDROID_API
+/define:ENABLE_EGL
 /define:ENABLE_NETWORK
+/define:ENABLE_RUNTIME_GI
 /define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
-/define:ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
-/define:ENABLE_CLUSTER_SYNC
-/define:ENABLE_CLUSTERINPUT
-/define:ENABLE_WEBSOCKET_HOST
+/define:PLATFORM_SUPPORTS_ADS_ID
+/define:UNITY_CAN_SHOW_SPLASH_SCREEN
+/define:UNITY_HAS_GOOGLEVR
+/define:UNITY_HAS_TANGO
+/define:ENABLE_SPATIALTRACKING
+/define:UNITY_ASTC_ONLY_DECOMPRESS
+/define:ENABLE_UNITYADS_RUNTIME
+/define:UNITY_UNITYADS_API
 /define:ENABLE_MONO
 /define:NET_STANDARD_2_0
 /define:ENABLE_PROFILER
@@ -273,7 +279,6 @@
 /define:ENABLE_UNITY_COLLECTIONS_CHECKS
 /define:ENABLE_BURST_AOT
 /define:UNITY_TEAM_LICENSE
-/define:ENABLE_VSTU
 /define:ENABLE_CUSTOM_RENDER_TEXTURE
 /define:ENABLE_DIRECTOR
 /define:ENABLE_LOCALIZATION
@@ -284,111 +289,73 @@
 /define:ENABLE_LEGACY_INPUT_MANAGER
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\AssemblyInfo.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\AllocatingGCMemoryConstraint.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\ConstraintsExtensions.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\InvalidSignatureException.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\Is.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\LogAssert.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\LogScope\ILogScope.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\LogScope\LogEvent.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\LogScope\LogMatch.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\LogScope\LogScope.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\UnexpectedLogMessageException.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\UnhandledLogMessageException.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\UnityTestTimeoutException.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\ActionDelegator.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\ConditionalIgnoreAttribute.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestMustExpectAllLogsAttribute.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityCombinatorialStrategy.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityPlatformAttribute.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnitySetUpAttribute.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityTearDownAttribute.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityTestAttribute.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\BaseDelegator.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\BeforeAfterTestCommandBase.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\BeforeAfterTestCommandState.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableApplyChangesToContextCommand.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableRepeatedTestCommand.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableRetryTestCommand.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableSetUpTearDownCommand.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableTestMethodCommand.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\ImmediateEnumerableCommand.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\OuterUnityTestActionCommand.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\SetUpTearDownCommand.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\TestActionCommand.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\TestCommandPcHelper.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\ConstructDelegator.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Filters\AssemblyNameFilter.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Filters\CategoryFilterExtended.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\IAsyncTestAssemblyBuilder.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\IStateSerializer.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\CompositeWorkItem.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\CoroutineTestWorkItem.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\DefaultTestWorkItem.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\FailCommand.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\IEnumerableTestMethodCommand.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\PlaymodeWorkItemFactory.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\RestoreTestContextAfterDomainReload.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\TestCommandBuilder.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityLogCheckDelegatingCommand.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityTestAssemblyRunner.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityTestExecutionContext.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityWorkItem.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityWorkItemDataHolder.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\WorkItemFactory.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\TestExtensions.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\TestResultExtensions.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\UnityTestAssemblyBuilder.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\Callbacks\PlayModeRunnerCallback.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\Callbacks\PlayerQuitHandler.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\Callbacks\RemoteTestResultSender.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\Callbacks\TestResultRenderer.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\Callbacks\TestResultRendererCallback.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\ITestRunnerListener.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\Messages\IEditModeTestYieldInstruction.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\PlaymodeTestsController.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\PlaymodeTestsControllerSettings.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\RemoteHelpers\IRemoteTestResultDataFactory.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\RemoteHelpers\PlayerConnectionMessageIds.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestData.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultData.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultDataFactory.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultDataWithTestData.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\SynchronousFilter.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\TestEnumeratorWrapper.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\TestListenerWrapper.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\TestPlatform.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\TestRunnerFilter.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\AssemblyLoadProxy.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\AssemblyWrapper.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\IAssemblyLoadProxy.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\IAssemblyWrapper.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\IScriptingRuntimeProxy.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\ITestAssemblyProvider.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\PlayerTestAssemblyProvider.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\ScriptingRuntimeProxy.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AttributeHelper.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\ColorEqualityComparer.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\CoroutineRunner.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\FloatEqualityComparer.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\IOuterUnityTestAction.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\IPostBuildCleanup.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\IPrebuildSceneSetup.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\ITestRunCallback.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\MonoBehaviourTest\IMonoBehaviourTest.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\MonoBehaviourTest\MonoBehaviourTest.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\PostBuildCleanupAttribute.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\PrebuildSceneSetupAttribute.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\QuaternionEqualityComparer.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\StacktraceFilter.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\TestRunCallbackAttribute.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\TestRunCallbackListener.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Utils.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Vector2ComparerWithEqualsOperator.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Vector2EqualityComparer.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Vector3ComparerWithEqualsOperator.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Vector3EqualityComparer.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Vector4ComparerWithEqualsOperator.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Vector4EqualityComparer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Activation\ActivationMixerPlayable.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Activation\ActivationPlayableAsset.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Activation\ActivationTrack.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Animation\AnimationOutputWeightProcessor.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Animation\AnimationPlayableAsset.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Animation\AnimationPreviewUpdateCallback.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Animation\AnimationTrack.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Animation\ICurvesOwner.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\AssetUpgrade\AnimationPlayableAssetUpgrade.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\AssetUpgrade\AnimationTrackUpgrade.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\AssetUpgrade\ClipUpgrade.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\AssetUpgrade\TimelineUpgrade.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\AssetUpgrade\TrackUpgrade.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Attributes\TrackColorAttribute.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Audio\AudioClipProperties.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Audio\AudioMixerProperties.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Audio\AudioPlayableAsset.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Audio\AudioTrack.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\ClipCaps.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Control\ControlPlayableAsset.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Control\ControlTrack.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\DiscreteTime.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Evaluation\InfiniteRuntimeClip.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Evaluation\IntervalTree.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Evaluation\RuntimeClip.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Evaluation\RuntimeClipBase.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Evaluation\RuntimeElement.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Evaluation\ScheduleRuntimeClip.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\IMarker.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\INotificationOptionProvider.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\Marker.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\MarkerList.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\MarkerTrack.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\SignalTrack.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\Signals\CustomSignalEventDrawer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\Signals\SignalAsset.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\Signals\SignalEmitter.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Events\Signals\SignalReceiver.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Extensions\TrackExtensions.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\GroupTrack.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\ILayerable.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\ActivationControlPlayable.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\BasicScriptPlayable.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\DirectorControlPlayable.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\ITimeControl.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\NotificationFlags.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\ParticleControlPlayable.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\PrefabControlPlayable.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\TimeControlPlayable.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Playables\TimeNotificationBehaviour.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Properties\AssemblyInfo.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Scripting\PlayableTrack.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Timeline.deprecated.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\TimelineAsset.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\TimelineAsset_CreateRemove.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\TimelineAttributes.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\TimelineClip.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\TimelinePlayable.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\TrackAsset.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\AnimationPreviewUtilities.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\AnimatorBindingCache.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\Extrapolation.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\HashUtility.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\IPropertyCollector.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\IPropertyPreview.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\NotificationUtilities.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\TimeUtility.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\TimelineCreateUtilities.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\TimelineUndo.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.timeline@1.2.14\Runtime\Utilities\WeightUtility.cs

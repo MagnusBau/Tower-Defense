@@ -1,13 +1,11 @@
 /target:library
 /nowarn:0169
-/out:Temp/Unity.TextMeshPro.dll
+/out:Temp/UnityEngine.TestRunner.dll
 /debug:portable
 /optimize-
 /nostdlib+
 /preferreduilang:en-US
 /langversion:latest
-/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
-/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -17,8 +15,6 @@
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll"
@@ -72,9 +68,11 @@
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
-/reference:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll"
+/reference:C:/Users/Mia/TaggoGames/TaggoGame1/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll
+/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/Microsoft.Win32.Primitives.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.AppContext.dll"
@@ -231,6 +229,7 @@
 /define:ENABLE_CLOUD_SERVICES_ADS
 /define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
 /define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+/define:ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING
 /define:ENABLE_CLOUD_SERVICES_PURCHASING
 /define:ENABLE_CLOUD_SERVICES_ANALYTICS
 /define:ENABLE_CLOUD_SERVICES_UNET
@@ -244,24 +243,29 @@
 /define:ENABLE_MANAGED_TRANSFORM_JOBS
 /define:ENABLE_MANAGED_ANIMATION_JOBS
 /define:ENABLE_MANAGED_AUDIO_JOBS
+/define:ENABLE_RUNTIME_PERMISSIONS
+/define:ENABLE_ENGINE_CODE_STRIPPING
+/define:ENABLE_ONSCREEN_KEYBOARD
 /define:INCLUDE_DYNAMIC_GI
 /define:ENABLE_MONO_BDWGC
 /define:ENABLE_SCRIPTING_GC_WBARRIERS
 /define:PLATFORM_SUPPORTS_MONO
-/define:RENDER_SOFTWARE_CURSOR
 /define:ENABLE_VIDEO
-/define:PLATFORM_STANDALONE
-/define:PLATFORM_STANDALONE_WIN
-/define:UNITY_STANDALONE_WIN
-/define:UNITY_STANDALONE
-/define:ENABLE_RUNTIME_GI
-/define:ENABLE_MOVIES
+/define:PLATFORM_ANDROID
+/define:UNITY_ANDROID
+/define:UNITY_ANDROID_API
+/define:ENABLE_EGL
 /define:ENABLE_NETWORK
+/define:ENABLE_RUNTIME_GI
 /define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
-/define:ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
-/define:ENABLE_CLUSTER_SYNC
-/define:ENABLE_CLUSTERINPUT
-/define:ENABLE_WEBSOCKET_HOST
+/define:PLATFORM_SUPPORTS_ADS_ID
+/define:UNITY_CAN_SHOW_SPLASH_SCREEN
+/define:UNITY_HAS_GOOGLEVR
+/define:UNITY_HAS_TANGO
+/define:ENABLE_SPATIALTRACKING
+/define:UNITY_ASTC_ONLY_DECOMPRESS
+/define:ENABLE_UNITYADS_RUNTIME
+/define:UNITY_UNITYADS_API
 /define:ENABLE_MONO
 /define:NET_STANDARD_2_0
 /define:ENABLE_PROFILER
@@ -274,7 +278,6 @@
 /define:ENABLE_UNITY_COLLECTIONS_CHECKS
 /define:ENABLE_BURST_AOT
 /define:UNITY_TEAM_LICENSE
-/define:ENABLE_VSTU
 /define:ENABLE_CUSTOM_RENDER_TEXTURE
 /define:ENABLE_DIRECTOR
 /define:ENABLE_LOCALIZATION
@@ -285,59 +288,111 @@
 /define:ENABLE_LEGACY_INPUT_MANAGER
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\AssemblyInfo.cs.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\FastAction.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\MaterialReferenceManager.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Asset.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Character.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_CharacterInfo.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_ColorGradient.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_CoroutineTween.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_DefaultControls.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Dropdown.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_EditorResourceManager.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_FontAsset.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_FontAssetCommon.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_FontAssetUtilities.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_FontFeatureTable.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_FontFeaturesCommon.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_InputField.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_InputValidator.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_LineInfo.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_ListPool.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_MaterialManager.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_MeshInfo.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_ObjectPool.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_PackageResourceImporter.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_RichTextTagStack.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_RichTextTagsCommon.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_ScrollbarEventHandler.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SelectionCaret.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Settings.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_ShaderUtilities.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Sprite.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SpriteAnimator.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SpriteAsset.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SpriteAssetImportFormats.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SpriteCharacter.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SpriteGlyph.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Style.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_StyleSheet.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SubMesh.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_SubMeshUI.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_Text.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_TextElement.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_TextElement_Legacy.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_TextInfo.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_TextParsingUtilities.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_TextUtilities.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_UpdateManager.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMP_UpdateRegistery.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMPro_EventManager.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMPro_ExtensionMethods.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMPro_MeshUtilities.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMPro_Private.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TMPro_UGUI_Private.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TextContainer.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TextMeshPro.cs
-C:\Projects\Taggo1\TaggoGame1\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Runtime\TextMeshProUGUI.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\AssemblyInfo.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\AllocatingGCMemoryConstraint.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\ConstraintsExtensions.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\InvalidSignatureException.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\Is.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\LogAssert.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\LogScope\ILogScope.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\LogScope\LogEvent.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\LogScope\LogMatch.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\LogScope\LogScope.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\UnexpectedLogMessageException.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\UnhandledLogMessageException.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Assertions\UnityTestTimeoutException.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\ActionDelegator.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\ConditionalIgnoreAttribute.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestMustExpectAllLogsAttribute.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityCombinatorialStrategy.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityPlatformAttribute.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnitySetUpAttribute.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityTearDownAttribute.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityTestAttribute.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\BaseDelegator.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\BeforeAfterTestCommandBase.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\BeforeAfterTestCommandState.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableApplyChangesToContextCommand.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableRepeatedTestCommand.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableRetryTestCommand.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableSetUpTearDownCommand.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableTestMethodCommand.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\ImmediateEnumerableCommand.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\OuterUnityTestActionCommand.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\SetUpTearDownCommand.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\TestActionCommand.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Commands\TestCommandPcHelper.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\ConstructDelegator.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Filters\AssemblyNameFilter.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Filters\CategoryFilterExtended.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\IAsyncTestAssemblyBuilder.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\IStateSerializer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\CompositeWorkItem.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\CoroutineTestWorkItem.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\DefaultTestWorkItem.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\FailCommand.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\IEnumerableTestMethodCommand.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\PlaymodeWorkItemFactory.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\RestoreTestContextAfterDomainReload.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\TestCommandBuilder.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityLogCheckDelegatingCommand.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityTestAssemblyRunner.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityTestExecutionContext.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityWorkItem.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityWorkItemDataHolder.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\Runner\WorkItemFactory.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\TestExtensions.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\TestResultExtensions.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\NUnitExtensions\UnityTestAssemblyBuilder.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\Callbacks\PlayModeRunnerCallback.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\Callbacks\PlayerQuitHandler.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\Callbacks\RemoteTestResultSender.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\Callbacks\TestResultRenderer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\Callbacks\TestResultRendererCallback.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\ITestRunnerListener.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\Messages\IEditModeTestYieldInstruction.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\PlaymodeTestsController.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\PlaymodeTestsControllerSettings.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\RemoteHelpers\IRemoteTestResultDataFactory.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\RemoteHelpers\PlayerConnectionMessageIds.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestData.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultData.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultDataFactory.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultDataWithTestData.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\SynchronousFilter.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\TestEnumeratorWrapper.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\TestListenerWrapper.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\TestPlatform.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\TestRunner\TestRunnerFilter.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\AssemblyLoadProxy.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\AssemblyWrapper.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\IAssemblyLoadProxy.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\IAssemblyWrapper.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\IScriptingRuntimeProxy.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\ITestAssemblyProvider.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\PlayerTestAssemblyProvider.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AssemblyProvider\ScriptingRuntimeProxy.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\AttributeHelper.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\ColorEqualityComparer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\CoroutineRunner.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\FloatEqualityComparer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\IOuterUnityTestAction.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\IPostBuildCleanup.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\IPrebuildSceneSetup.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\ITestRunCallback.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\MonoBehaviourTest\IMonoBehaviourTest.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\MonoBehaviourTest\MonoBehaviourTest.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\PostBuildCleanupAttribute.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\PrebuildSceneSetupAttribute.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\QuaternionEqualityComparer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\StacktraceFilter.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\TestRunCallbackAttribute.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\TestRunCallbackListener.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Utils.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Vector2ComparerWithEqualsOperator.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Vector2EqualityComparer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Vector3ComparerWithEqualsOperator.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Vector3EqualityComparer.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Vector4ComparerWithEqualsOperator.cs
+C:\Users\Mia\TaggoGames\TaggoGame1\Library\PackageCache\com.unity.test-framework@1.1.14\UnityEngine.TestRunner\Utils\Vector4EqualityComparer.cs
