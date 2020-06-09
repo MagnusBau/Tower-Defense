@@ -1,12 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Home : MonoBehaviour
 {
-    public float hp = 1f;
+    public float hp = 15f;
     public Color destroyedColor;
 
+
+    public Text hpCounterText;
+
+    void Start()
+    {
+        hpCounterText.text = hp.ToString();
+    }
     public void Damage(float points)
     {
         hp -= points;
@@ -15,6 +23,7 @@ public class Home : MonoBehaviour
             Debug.Log("Took damage: " + points);
             GetComponent<Renderer>().material.color = destroyedColor;
         }
+        hpCounterText.text = hp.ToString();
     }
 
 }

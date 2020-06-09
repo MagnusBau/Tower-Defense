@@ -5,6 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 10f;
+    public float hp = 1f;
+    public float strength = 1f;
+
     public string homeTag = "Home";
     public Vector3 offset;
 
@@ -20,8 +23,8 @@ public class Enemy : MonoBehaviour
         if (Vector3.Distance(transform.position, target.transform.position) <= 4f)
         {
             Debug.Log("Reached destination");
-            target.GetComponent<Home>().Damage(1f);
-            Destroy(gameObject);
+            target.GetComponent<Home>().Damage(strength);
+            RemoveEnemy();
             return;
         }
 
@@ -53,6 +56,21 @@ public class Enemy : MonoBehaviour
         else
         {
             target = null;
+        }
+    }
+
+    public void RemoveEnemy()
+    {
+        GameMaster.instance.ReportEnemyDeath();
+        Destroy(gameObject);
+    }
+
+    public void Damage(float points)
+    {
+        hp -= points;
+        if(hp <= 0f)
+        {
+            RemoveEnemy();
         }
     }
 }

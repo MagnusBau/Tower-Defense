@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Home
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX
