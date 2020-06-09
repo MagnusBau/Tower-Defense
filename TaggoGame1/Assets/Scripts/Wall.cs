@@ -23,4 +23,9 @@ public class Wall : MonoBehaviour
             }
         }
     }
+
+    private void OnDestroy()
+    {
+        WallManager.instance.ReportWallRemoved(gameObject.GetComponent<Wall>());
+    }
 }
