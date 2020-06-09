@@ -17,8 +17,7 @@ public class GameMaster : MonoBehaviour
     public Transform stronkEnemy;
     public Text enemyCountText;
 
-    private GameObject[] enemySpawners;
-    private EnemySpawner[] enemySpawnerScrips;
+    private EnemySpawner[] enemySpawners;
     private int enemyCount;
 
     private void Awake()
@@ -34,13 +33,13 @@ public class GameMaster : MonoBehaviour
     }
     void Start()
     {
-        enemySpawners = GameObject.FindGameObjectsWithTag(enemySpawnerTag);
-        enemySpawnerScrips = new EnemySpawner[enemySpawners.Length];
+        GameObject[] enemySpawnersTemp = GameObject.FindGameObjectsWithTag(enemySpawnerTag);
+        enemySpawners = new EnemySpawner[enemySpawnersTemp.Length];
         for(int i = 0; i < enemySpawners.Length; i++)
         {
-                enemySpawnerScrips[i] = enemySpawners[i].GetComponent<EnemySpawner>();
+                enemySpawners[i] = enemySpawnersTemp[i].GetComponent<EnemySpawner>();
         }
-        enemyCount = waveCount * enemySpawnerScrips.Length;
+        enemyCount = waveCount * enemySpawners.Length;
         enemyCountText.text = "Enemies Left: " + enemyCount;
     }
 
@@ -49,7 +48,7 @@ public class GameMaster : MonoBehaviour
         enemyCountText.text = "Enemies Left: " + enemyCount;
         if (countdown <= 0 && waveCount > 0)
         {
-            foreach(EnemySpawner enemySpawner in enemySpawnerScrips)
+            foreach(EnemySpawner enemySpawner in enemySpawners)
             {
                 int rnd = Random.Range(0, 10) + 1;
                 if(rnd > 9)

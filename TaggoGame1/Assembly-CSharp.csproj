@@ -69,6 +69,9 @@
     <Compile Include="Assets\Scripts\Home.cs" />
     <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\Turret.cs" />
+    <Compile Include="Assets\Scripts\Wall.cs" />
+    <Compile Include="Assets\Scripts\WallFiller.cs" />
+    <Compile Include="Assets\Scripts\WallManager.cs" />
     <Compile Include="Assets\Scripts\stronkEnemy.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
