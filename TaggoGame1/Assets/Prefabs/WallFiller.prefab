@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8867122811130377590}
   - component: {fileID: 1719939710335679708}
   - component: {fileID: -2951168492683684207}
+  - component: {fileID: -5269536376882913091}
   m_Layer: 0
   m_Name: WallFiller
   m_TagString: Untagged
@@ -106,3 +107,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6bcb082cf5f9a4089d4c24dfc71b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!208 &-5269536376882913091
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541525860512697560}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
