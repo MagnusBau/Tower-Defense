@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     private bool destroyed = false;
 
-    [SerializeField] private GameObject target;
+    [SerializeField] private GameObject _destination;
     [SerializeField] private NavMeshAgent m_NavMeshAgent;
 
     void Start()
@@ -25,19 +25,15 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, target.transform.position) <= 4f)
+        if (Vector3.Distance(transform.position, _destination.transform.position) <= 4f)
         {
             Debug.Log("Reached destination");
-            target.GetComponent<Home>().Damage(strength);
+            _destination.GetComponent<Home>().Damage(strength);
             RemoveEnemy();
             return;
         }
 
-        //m_NavMeshAgent.Warp(transform.position);
-        m_NavMeshAgent.SetDestination(target.transform.position);
-        /*
-        Vector3 dir = target.transform.position + offset - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime);*/
+        m_NavMeshAgent.SetDestination(_destination.transform.position);
     }
 
     void UpdateTarget()
@@ -59,11 +55,11 @@ public class Enemy : MonoBehaviour
         }
         if (nearestTarget != null)
         {
-            target = nearestTarget;
+            _destination = nearestTarget;
         }
         else
         {
-            target = null;
+            _destination = null;
         }
     }
 
@@ -74,13 +70,19 @@ public class Enemy : MonoBehaviour
         return;
     }
 
-    public void Damage(float points)
+    public void Damage()
+    {
+
+    }
+
+    public void TakeDamage(float points)
     {
         hp -= points;
         if(hp <= 0f)
         {
             if (!destroyed)
             {
+                destroyed = true;
                 RemoveEnemy();
                 return;
             }
