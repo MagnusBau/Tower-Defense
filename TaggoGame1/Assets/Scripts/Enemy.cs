@@ -76,6 +76,7 @@ public class Enemy : MonoBehaviour
             if (!destroyed)
             {
                 RemoveEnemy();
+                return;
             }
         }
     }
