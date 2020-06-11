@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
 
     private bool destroyed = false;
 
+    [SerializeField] private GameObject _target;
     [SerializeField] private GameObject _destination;
     [SerializeField] private NavMeshAgent m_NavMeshAgent;
 
@@ -65,6 +66,7 @@ public class Enemy : MonoBehaviour
 
     public void RemoveEnemy()
     {
+        destroyed = true;
         EnemyManager.instance.ReportEnemyDeath();
         Destroy(gameObject);
         return;
@@ -72,7 +74,7 @@ public class Enemy : MonoBehaviour
 
     public void Damage()
     {
-
+        _target.takeDamage(strength);
     }
 
     public void TakeDamage(float points)
@@ -82,7 +84,6 @@ public class Enemy : MonoBehaviour
         {
             if (!destroyed)
             {
-                destroyed = true;
                 RemoveEnemy();
                 return;
             }
