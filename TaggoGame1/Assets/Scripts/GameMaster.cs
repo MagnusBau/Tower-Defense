@@ -7,9 +7,11 @@ public class GameMaster : MonoBehaviour
 {
     public static GameMaster instance;
 
-    public Transform enemyManagarPrefab;
+    public Transform enemyManagerPrefab;
+    public Transform buildManagerPrefab;
 
     private EnemyManager enemyManager;
+    private BuildManager buildManager;
 
     void Awake()
     {
@@ -24,7 +26,8 @@ public class GameMaster : MonoBehaviour
     }
     void Start()
     {
-        enemyManager = Instantiate(enemyManagarPrefab).GetComponent<EnemyManager>();
+        enemyManager = Instantiate(enemyManagerPrefab).GetComponent<EnemyManager>();
+        buildManager = Instantiate(buildManagerPrefab).GetComponent<BuildManager>();
     }
 
     void Update()
@@ -35,5 +38,10 @@ public class GameMaster : MonoBehaviour
     public EnemyManager GetEnemyManager()
     {
         return enemyManager;
+    }
+
+    public BuildManager GetBuildManager()
+    {
+        return buildManager;
     }
 }
