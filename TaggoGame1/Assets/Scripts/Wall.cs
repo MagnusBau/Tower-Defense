@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Wall : MonoBehaviour
+public class Wall : DestroyableObject
 {
     public float tileWidth = 4;
     public float tileDivider = 1;
@@ -12,6 +12,7 @@ public class Wall : MonoBehaviour
 
     void Start()
     {
+        SetAttributes(5f, 0f);
         float maxDistToNeighbour = (tileWidth + tileDivider)*1.25f;
         GameObject[] walls = GameObject.FindGameObjectsWithTag(wallTag);
         foreach(GameObject wall in walls)

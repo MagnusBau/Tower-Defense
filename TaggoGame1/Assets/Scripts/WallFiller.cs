@@ -3,10 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallFiller : MonoBehaviour
+public class WallFiller : DestroyableObject
 {
+
     private Wall wall1;
     private Wall wall2;
+
+    void Start()
+    {
+        SetAttributes(5f, 0f);
+    }
 
     public void Set(Wall w1, Wall w2)
     {
@@ -33,5 +39,10 @@ public class WallFiller : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    void OnDestroy()
+    {
+        //
     }
 }
