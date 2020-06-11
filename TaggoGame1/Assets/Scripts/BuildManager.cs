@@ -22,6 +22,21 @@ public class BuildManager : MonoBehaviour
 
     private void Start()
     {
+        if (instance == null)
+        {
+            if (GameMaster.instance != null)
+            {
+                instance = GameMaster.instance.GetBuildManager();
+            }
+            else
+            {
+                Debug.Log("BuildManager instance is null (GameMaster missing)");
+            }
+        }
+        else
+        {
+            Debug.Log("BuildManager Duplicate");
+        }
         BuildingToBuild = DefaultBuilding;
     }
 }

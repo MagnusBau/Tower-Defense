@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
-    public Vector3 offset;
 
     private GameObject building;
     private Renderer rend;
@@ -33,7 +33,15 @@ public class Node : MonoBehaviour
         {
             return;
         }
+        Vector3 offset = new Vector3(0f, 0f, 0f);
         GameObject buildingToBuild = BuildManager.instance.GetBuildingToBuild();
+        foreach(Transform child in buildingToBuild.transform)
+        {
+            if(child.name == "Tail")
+            {
+                offset = child.position;
+            }
+        }
         building = (GameObject)Instantiate(buildingToBuild, transform.position + offset, transform.rotation);
     }
 }
