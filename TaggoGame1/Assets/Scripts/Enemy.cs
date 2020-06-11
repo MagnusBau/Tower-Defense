@@ -81,4 +81,25 @@ public class Enemy : DestroyableObject
         Destroy(gameObject);
         return;
     }
+<<<<<<< HEAD
+=======
+
+    public void Damage()
+    {
+        _target.takeDamage(strength);
+    }
+
+    public void TakeDamage(float points)
+    {
+        hp -= points;
+        if(hp <= 0f)
+        {
+            if (!destroyed)
+            {
+                RemoveEnemy();
+                return;
+            }
+        }
+    }
+>>>>>>> b1ef051d47a9651a888d002624455fbd95b5c89a
 }
