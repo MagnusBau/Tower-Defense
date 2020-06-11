@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,12 +12,15 @@ public class Enemy : MonoBehaviour
     public string homeTag = "Home";
     public Vector3 offset;
 
-    private GameObject target;
     private bool destroyed = false;
+
+    [SerializeField] private GameObject target;
+    [SerializeField] private NavMeshAgent m_NavMeshAgent;
 
     void Start()
     {
         UpdateTarget();
+        
     }
 
     void Update()
@@ -29,8 +33,11 @@ public class Enemy : MonoBehaviour
             return;
         }
 
+        //m_NavMeshAgent.Warp(transform.position);
+        m_NavMeshAgent.SetDestination(target.transform.position);
+        /*
         Vector3 dir = target.transform.position + offset - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime);
+        transform.Translate(dir.normalized * speed * Time.deltaTime);*/
     }
 
     void UpdateTarget()
