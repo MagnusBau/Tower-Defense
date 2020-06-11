@@ -69,9 +69,8 @@ public class Enemy : MonoBehaviour
 
     public void RemoveEnemy()
     {
-        GameMaster.instance.ReportEnemyDeath();
+        EnemyManager.instance.ReportEnemyDeath();
         Destroy(gameObject);
-        destroyed = true;
         return;
     }
 

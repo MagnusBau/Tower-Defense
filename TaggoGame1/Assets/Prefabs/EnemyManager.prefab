@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &889017835580358906
+--- !u!1 &3351293691220731056
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 365905271965752245}
-  - component: {fileID: 4861432751747324176}
+  - component: {fileID: 4479974654370366737}
+  - component: {fileID: 7727267329877434561}
   m_Layer: 0
-  m_Name: GameMaster
+  m_Name: EnemyManagar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &365905271965752245
+--- !u!4 &4479974654370366737
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889017835580358906}
+  m_GameObject: {fileID: 3351293691220731056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 95.20241, y: -2.8487148, z: 82.4497}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4861432751747324176
+--- !u!114 &7727267329877434561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889017835580358906}
+  m_GameObject: {fileID: 3351293691220731056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edfb48ad2b6de714780e23a5563f1959, type: 3}
+  m_Script: {fileID: 11500000, guid: d80efce26dade1e4ebf9903de31c1840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManagarPrefab: {fileID: 4479974654370366737, guid: 1a8e912d682475d478be632f3b3ecf82,
+  countdown: 5
+  timeBetweenEnemies: 1
+  waveCount: 5
+  enemySpawnerTag: EnemySpawner
+  enemy: {fileID: 4468567278658483843, guid: c4ff235c47775e24d824c9f514a57f2d, type: 3}
+  stronkEnemy: {fileID: 5233398447245648624, guid: a22bd351e3385694a964bada77877da2,
+    type: 3}
+  enemyCountText: {fileID: 4513770513344317162, guid: b302be43809501246bff5afcc8cde781,
     type: 3}
