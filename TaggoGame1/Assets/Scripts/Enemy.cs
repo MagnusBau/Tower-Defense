@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public Vector3 offset;
 
     private GameObject target;
+    private bool destroyed = false;
 
     void Start()
     {
@@ -63,6 +64,8 @@ public class Enemy : MonoBehaviour
     {
         GameMaster.instance.ReportEnemyDeath();
         Destroy(gameObject);
+        destroyed = true;
+        return;
     }
 
     public void Damage(float points)
@@ -70,7 +73,10 @@ public class Enemy : MonoBehaviour
         hp -= points;
         if(hp <= 0f)
         {
-            RemoveEnemy();
+            if (!destroyed)
+            {
+                RemoveEnemy();
+            }
         }
     }
 }
