@@ -43,12 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edfb48ad2b6de714780e23a5563f1959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: 5
-  timeBetweenEnemies: 1
-  waveCount: 5
-  enemySpawnerTag: EnemySpawner
-  enemy: {fileID: 4468567278658483843, guid: c4ff235c47775e24d824c9f514a57f2d, type: 3}
-  stronkEnemy: {fileID: 5233398447245648624, guid: a22bd351e3385694a964bada77877da2,
-    type: 3}
-  enemyCountText: {fileID: 4513770513344317162, guid: b302be43809501246bff5afcc8cde781,
+  enemyManagarPrefab: {fileID: 4479974654370366737, guid: 1a8e912d682475d478be632f3b3ecf82,
     type: 3}

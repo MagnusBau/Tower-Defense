@@ -7,22 +7,13 @@ public class GameMaster : MonoBehaviour
 {
     public static GameMaster instance;
 
-    public float countdown = 5f;
+    public Transform enemyManagarPrefab;
 
-    public float timeBetweenEnemies = 1f;
-    public int waveCount = 5;
+    private EnemyManager enemyManager;
 
-    public string enemySpawnerTag = "EnemySpawner";
-    public Transform enemy;
-    public Transform stronkEnemy;
-    public Text enemyCountText;
-
-    private EnemySpawner[] enemySpawners;
-    private int enemyCount;
-
-    private void Awake()
+    void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Debug.Log("GameMaster Duplicate!!!");
         }
@@ -33,46 +24,16 @@ public class GameMaster : MonoBehaviour
     }
     void Start()
     {
-        GameObject[] enemySpawnersTemp = GameObject.FindGameObjectsWithTag(enemySpawnerTag);
-        enemySpawners = new EnemySpawner[enemySpawnersTemp.Length];
-        for(int i = 0; i < enemySpawners.Length; i++)
-        {
-                enemySpawners[i] = enemySpawnersTemp[i].GetComponent<EnemySpawner>();
-        }
-        enemyCount = waveCount * enemySpawners.Length;
-        enemyCountText.text = "Enemies Left: " + enemyCount;
+        enemyManager = Instantiate(enemyManagarPrefab).GetComponent<EnemyManager>();
     }
 
     void Update()
     {
-        enemyCountText.text = "Enemies Left: " + enemyCount;
-        if (countdown <= 0 && waveCount > 0)
-        {
-            foreach(EnemySpawner enemySpawner in enemySpawners)
-            {
-                int rnd = Random.Range(0, 10) + 1;
-                if(rnd > 9)
-                {
-                    SpawnEnemy(enemySpawner, stronkEnemy);
-                }
-                else
-                {
-                    SpawnEnemy(enemySpawner, enemy);
-                }
-            }
-            waveCount--;
-            countdown = timeBetweenEnemies;
-        }
-        countdown -= Time.deltaTime;
+        
     }
 
-    void SpawnEnemy(EnemySpawner spawner, Transform enemy)
+    public EnemyManager GetEnemyManager()
     {
-        spawner.SpawnEnemy(enemy);
-    }
-
-    public void ReportEnemyDeath()
-    {
-        enemyCount--;
+        return enemyManager;
     }
 }
