@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Turret : MonoBehaviour
+public class Turret : DestroyableObject
 {
     [Header("Attributes")]
     public float range = 15f;
@@ -16,6 +16,11 @@ public class Turret : MonoBehaviour
     private float cooldown = 0f;
     private GameObject target;
 
+    void Start()
+    {
+        SetAttributes(10f, 0f);
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+    }
     private void UpdateTarget()
     {
         float shortestDistance = Mathf.Infinity;
@@ -54,10 +59,6 @@ public class Turret : MonoBehaviour
         cooldown = 1 / fireRate;
     }
 
-    private void Start()
-    {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
-    }
     private void Update()
     {
         cooldown -= Time.deltaTime;

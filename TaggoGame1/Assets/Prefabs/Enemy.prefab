@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4468567278658483842}
   - component: {fileID: 4468567278658483841}
   - component: {fileID: 4468567278658483840}
-  - component: {fileID: 4468567278658483871}
   - component: {fileID: -8335970947557545406}
+  - component: {fileID: 202018436040265540}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -95,25 +95,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4468567278658483871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4468567278658483870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 506117ae4a4174f4586b654a937b6fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  hp: 1
-  strength: 1
-  homeTag: Home
-  offset: {x: 0, y: 1, z: 0}
-  target: {fileID: 8903191935411852312, guid: 251c80f2605ab454e8d3635dbe145412, type: 3}
-  m_NavMeshAgent: {fileID: -8335970947557545406}
 --- !u!195 &-8335970947557545406
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -124,7 +105,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -136,3 +117,24 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &202018436040265540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4468567278658483870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51975d2759f590546ae7fdfb49ff160d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  strength: 0
+  speed: 50
+  homeTag: Home
+  offset: {x: 0, y: 0, z: 0}
+  _target: {fileID: 0}
+  _destination: {fileID: 8903191935411852312, guid: 251c80f2605ab454e8d3635dbe145412,
+    type: 3}
+  m_NavMeshAgent: {fileID: -8335970947557545406}

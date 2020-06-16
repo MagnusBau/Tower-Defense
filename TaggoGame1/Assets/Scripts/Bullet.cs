@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : DestroyableObject
 {
     public float damage = 1f;
     public float speed = 70f;
-    private GameObject target;
+    private DestroyableObject target;
 
+    void Start()
+    {
+        SetAttributes(1f, 1f);
+    }
     public void SetTarget(GameObject _target)
     {
-        target = _target;
+        target = _target.GetComponent<DestroyableObject>();
     }
 
     private void Move()
@@ -20,7 +24,7 @@ public class Bullet : MonoBehaviour
             transform.Translate(dir * distancePerFrame, Space.World);
             if(Vector3.Distance(transform.position, target.transform.position) < 0.4f)
             {
-                target.GetComponent<Enemy>().TakeDamage(damage);
+                target.TakeDamage(damage);
                 Destroy(gameObject);
                 return;
             }
@@ -32,7 +36,7 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
         if(target == null)
         {
