@@ -12,7 +12,7 @@ public class Enemy : DestroyableObject
 
     private bool destroyed = false;
 
-    [SerializeField] private GameObject _target;
+    [SerializeField] private DestroyableObject _target;
     [SerializeField] private GameObject _destination;
     [SerializeField] private NavMeshAgent m_NavMeshAgent;
 
@@ -31,7 +31,8 @@ public class Enemy : DestroyableObject
         }
         else
         {
-            m_NavMeshAgent.
+            //m_NavMeshAgent.
+            return;
         }
     }
 
@@ -81,12 +82,10 @@ public class Enemy : DestroyableObject
         Destroy(gameObject);
         return;
     }
-<<<<<<< HEAD
-=======
 
     public void Damage()
     {
-        _target.takeDamage(strength);
+        _target.TakeDamage(strength);
     }
 
     public void TakeDamage(float points)
@@ -101,5 +100,4 @@ public class Enemy : DestroyableObject
             }
         }
     }
->>>>>>> b1ef051d47a9651a888d002624455fbd95b5c89a
 }
