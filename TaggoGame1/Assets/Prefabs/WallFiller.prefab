@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -5269536376882913091}
   m_Layer: 0
   m_Name: WallFiller
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,8 +108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
-  strength: 0
-  hp: 5
   strength: 0
 --- !u!208 &-5269536376882913091
 NavMeshObstacle:

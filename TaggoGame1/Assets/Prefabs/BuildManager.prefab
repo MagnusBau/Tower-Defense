@@ -43,5 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45cada1871cd6b843a573fd27e5c5fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultBuilding: {fileID: 4627343003582821989, guid: 0b689b9c9bdd855458393f23bc41daca,
+  balance: 500
+  balanceDisplay: {fileID: 6732878700229428781, guid: 3cf2ba99c2cf33240a697949f9c4b36e,
+    type: 3}
+  defaultturretPrice: 100
+  wallPrice: 50
+  DefaultBuildingPrefab: {fileID: 4108633650897333998, guid: 5b0f8b74b89ae184a8538bc01423679e,
+    type: 3}
+  WallPrefab: {fileID: 4627343003582821989, guid: 0b689b9c9bdd855458393f23bc41daca,
     type: 3}

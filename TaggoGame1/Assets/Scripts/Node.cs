@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEditor.Animations;
 using UnityEngine;
 
@@ -10,9 +11,11 @@ public class Node : MonoBehaviour
     private GameObject building;
     private Renderer rend;
     private Color defaultColor;
+    BuildManager buildManager;
 
     private void Start()
     {
+        buildManager = BuildManager.instance;
         rend = GetComponent<Renderer>();
         defaultColor = rend.material.color;
     }
@@ -33,8 +36,12 @@ public class Node : MonoBehaviour
         {
             return;
         }
+        if(buildManager.GetBuildingToBuild() == null)
+        {
+            return;
+        }
         Vector3 offset = new Vector3(0f, 0f, 0f);
-        GameObject buildingToBuild = BuildManager.instance.GetBuildingToBuild();
+        GameObject buildingToBuild = buildManager.GetBuildingToBuild();
         foreach(Transform child in buildingToBuild.transform)
         {
             if(child.name == "Tail")
@@ -43,5 +50,6 @@ public class Node : MonoBehaviour
             }
         }
         building = (GameObject)Instantiate(buildingToBuild, transform.position + offset, transform.rotation);
+        buildManager.UpdateBalance();
     }
 }
