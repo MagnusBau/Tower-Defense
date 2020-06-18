@@ -19,6 +19,10 @@ public class DestroyableObject : MonoBehaviour
     {
         destroyed = true;
         Destroy(gameObject);
+        if(this is Enemy)
+        {
+            EnemyManager.instance.ReportEnemyDeath();
+        }
         return;
     }
 

@@ -6,18 +6,20 @@ using UnityEngine.AI;
 public class Enemy : DestroyableObject
 {
     public float speed = 10f;
-
     public string homeTag = "Home";
     public Vector3 offset;
-
     private bool destroyed = false;
+    private float cooldown = 0f;
+    public float fireRate = 1f;
 
     [SerializeField] private DestroyableObject _target;
     [SerializeField] private GameObject _destination;
     [SerializeField] private NavMeshAgent m_NavMeshAgent;
 
+
     void Start()
     {
+        m_NavMeshAgent.autoTraverseOffMeshLink = false;
         SetAttributes(2f, 1f);
         FindDestination();
     }
@@ -27,6 +29,8 @@ public class Enemy : DestroyableObject
         m_NavMeshAgent.SetDestination(_destination.transform.position);
         if(m_NavMeshAgent.hasPath)
         {
+            
+            
             return;
         }
         else
@@ -38,6 +42,7 @@ public class Enemy : DestroyableObject
 
     void Update()
     {
+        cooldown -= Time.deltaTime;
         if (Vector3.Distance(transform.position, _destination.transform.position) <= 3f)
         {
             Debug.Log("Reached destination");
@@ -46,6 +51,26 @@ public class Enemy : DestroyableObject
             return;
         }
         FindPath();
+        if(cooldown <= 0)
+        {
+            if(m_NavMeshAgent.isOnOffMeshLink)
+            {
+                OffMeshLink currentOffMeshLink = m_NavMeshAgent.currentOffMeshLinkData.offMeshLink;
+                if(currentOffMeshLink != null)
+                {
+                    WallFiller wallFiller = currentOffMeshLink.gameObject.transform.parent.GetComponent<WallFiller>();
+                    if(wallFiller != null)
+                    {
+                        wallFiller.TakeDamage(strength);
+                        cooldown = 1 / fireRate;
+                    }
+                }
+                else
+                {
+                    m_NavMeshAgent.CompleteOffMeshLink();
+                }
+            }
+        }
     }
 
     public void FindDestination()
@@ -74,6 +99,7 @@ public class Enemy : DestroyableObject
             _destination = null;
         }
     }
+
 
     public void RemoveEnemy()
     {

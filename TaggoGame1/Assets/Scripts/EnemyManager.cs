@@ -13,6 +13,7 @@ public class EnemyManager : MonoBehaviour
     public int waveCount = 5;
 
     public string enemySpawnerTag = "EnemySpawner";
+    public string enemyCounterTag = "EnemyCounter";
     public Transform enemy;
     public Transform stronkEnemy;
     public Text enemyCountText;
@@ -22,7 +23,7 @@ public class EnemyManager : MonoBehaviour
 
     void Start()
     {
-        //-----------------------------------------------------------------------------
+        
         if (instance == null)
         {
             if (GameMaster.instance != null)
@@ -38,7 +39,7 @@ public class EnemyManager : MonoBehaviour
         {
             Debug.Log("EnemyManager Duplicate");
         }
-        //-----------------------------------------------------------------------------
+        
 
         GameObject[] enemySpawnersTemp = GameObject.FindGameObjectsWithTag(enemySpawnerTag);
         enemySpawners = new EnemySpawner[enemySpawnersTemp.Length];
@@ -47,7 +48,10 @@ public class EnemyManager : MonoBehaviour
             enemySpawners[i] = enemySpawnersTemp[i].GetComponent<EnemySpawner>();
         }
         enemyCount = waveCount * enemySpawners.Length;
+
+        enemyCountText = GameObject.FindGameObjectWithTag(enemyCounterTag).GetComponent<Text>() as Text;
         enemyCountText.text = "Enemies Left: " + enemyCount;
+        
     }
 
     void Update()
@@ -78,8 +82,15 @@ public class EnemyManager : MonoBehaviour
         spawner.SpawnEnemy(enemy);
     }
 
+    public void ReportDeath()
+    {
+        //enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+    }
+
     public void ReportEnemyDeath()
     {
         enemyCount--;
+
+        Debug.Log("enemycount " + enemyCount);
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class stronkEnemy : Enemy
+public class StronkEnemy : Enemy
 {
     void Start()
     {
