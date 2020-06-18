@@ -26,6 +26,7 @@ public class GameMaster : MonoBehaviour
     }
     void Start()
     {
+        Debug.Log("Hei fra gamemaster start");
         enemyManager = Instantiate(enemyManagerPrefab).GetComponent<EnemyManager>();
         buildManager = Instantiate(buildManagerPrefab).GetComponent<BuildManager>();
     }
