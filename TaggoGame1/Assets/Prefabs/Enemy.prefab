@@ -134,6 +134,7 @@ MonoBehaviour:
   speed: 50
   homeTag: Home
   offset: {x: 0, y: 0, z: 0}
+  fireRate: 1
   _target: {fileID: 0}
   _destination: {fileID: 8903191935411852312, guid: 251c80f2605ab454e8d3635dbe145412,
     type: 3}
