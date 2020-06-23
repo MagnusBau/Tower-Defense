@@ -13,12 +13,20 @@ public class Shop : MonoBehaviour
     public void SelectStandardTurret()
     {
         Debug.Log(buildManager);
-        buildManager.SetTurretToBuild(buildManager.DefaultBuildingPrefab, buildManager.defaultturretPrice);
+        buildManager.SetBuildingToBuild(buildManager.DefaultBuildingPrefab, buildManager.defaultturretPrice);
     }
 
     public void SelectWall()
     {
         Debug.Log("Wall Purchased");
-        buildManager.SetTurretToBuild(buildManager.WallPrefab, buildManager.wallPrice);
+        buildManager.SetBuildingToBuild(buildManager.WallPrefab, buildManager.wallPrice);
     }
+
+    public void SelectBitcoin()
+    {
+        Debug.Log("Bitcoin Purchased");
+        buildManager.SetBuildingToBuild(buildManager.bitcoinPrefab, buildManager.bitcoinPrice);
+    }
+
+   
 }

@@ -10,11 +10,14 @@ public class BuildManager : MonoBehaviour
     [Header("Prices")]
     public float defaultturretPrice;
     public float wallPrice;
+    public float bitcoinPrice;
 
     [Header("Buildings")]
     public GameObject DefaultBuildingPrefab;
     public GameObject WallPrefab;
+    public GameObject bitcoinPrefab;
     private GameObject BuildingToBuild;
+   
     private float priceForBuilding;
     private Text balanceDisplay;
 
@@ -37,17 +40,25 @@ public class BuildManager : MonoBehaviour
         balanceDisplay.text = "$" + balance.ToString();
     }
 
+  
+
     void Update()
     {
         balanceDisplay.text = "$" + balance.ToString();
     }
+
+    public float GetPriceForBuilding()
+    {
+        return priceForBuilding;
+    }
+
 
     public GameObject GetBuildingToBuild()
     {
         return BuildingToBuild;
     }
 
-    public void SetTurretToBuild(GameObject bulding, float price)
+    public void SetBuildingToBuild(GameObject bulding, float price)
     {
         BuildingToBuild = bulding;
         priceForBuilding = price;

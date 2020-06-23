@@ -23,7 +23,7 @@ public class Node : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if(buildManager.balance > 0)
+        if(buildManager.balance > buildManager.GetPriceForBuilding())
         {
             if (building == null)
             {
