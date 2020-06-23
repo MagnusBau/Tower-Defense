@@ -11,6 +11,7 @@ public class Enemy : DestroyableObject
     private bool destroyed = false;
     private float cooldown = 0f;
     public float fireRate = 1f;
+    public float fireRadius = 1f;
 
     [SerializeField] private DestroyableObject _target;
     [SerializeField] private GameObject _destination;
@@ -68,6 +69,20 @@ public class Enemy : DestroyableObject
                 else
                 {
                     m_NavMeshAgent.CompleteOffMeshLink();
+                }
+            }
+            else if(m_NavMeshAgent.nextOffMeshLinkData.valid)
+            {
+                OffMeshLink nextOffMeshLink = m_NavMeshAgent.nextOffMeshLinkData.offMeshLink;
+                float distanceToNextOML = Vector3.Distance(transform.position, nextOffMeshLink.transform.position);
+                if(nextOffMeshLink != null && distanceToNextOML <= fireRadius)
+                {
+                    WallFiller wallFiller = nextOffMeshLink.gameObject.transform.parent.GetComponent<WallFiller>();
+                    if(wallFiller != null)
+                    {
+                        wallFiller.TakeDamage(strength);
+                        cooldown = 1 / fireRate;
+                    }
                 }
             }
         }
