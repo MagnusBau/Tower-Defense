@@ -7,6 +7,10 @@ TagManager:
   - Home
   - EnemySpawner
   - Wall
+  - WallLink
+  - Enemy
+  - BalanceDisplay
+  - EnemyCounter
   layers:
   - Default
   - TransparentFX

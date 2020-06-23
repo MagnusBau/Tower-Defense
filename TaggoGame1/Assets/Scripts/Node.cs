@@ -7,6 +7,7 @@ using UnityEngine;
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
+    public Color OccupiedColor;
 
     private GameObject building;
     private Renderer rend;
@@ -22,7 +23,18 @@ public class Node : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        rend.material.color = hoverColor;
+        if(buildManager.balance > 0)
+        {
+            if (building == null)
+            {
+                rend.material.color = hoverColor;
+            }
+            else
+            {
+                rend.material.color = OccupiedColor;
+            }
+
+        }
     }
 
     private void OnMouseExit()
@@ -49,7 +61,11 @@ public class Node : MonoBehaviour
                 offset = child.position;
             }
         }
-        building = (GameObject)Instantiate(buildingToBuild, transform.position + offset, transform.rotation);
-        buildManager.UpdateBalance();
+        //Checks if there is enough money for building
+        if (buildManager.UpdateBalance())
+        {
+            rend.material.color = OccupiedColor;
+            building = (GameObject)Instantiate(buildingToBuild, transform.position + offset, transform.rotation);
+        }
     }
 }

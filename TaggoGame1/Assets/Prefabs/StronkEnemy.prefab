@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5233398447245648625}
   - component: {fileID: 5233398447245648626}
   - component: {fileID: 5233398447245648627}
-  - component: {fileID: 2978850591404561710}
   - component: {fileID: 8006263014513331716}
+  - component: {fileID: -1190154303443475819}
   m_Layer: 0
   m_Name: StronkEnemy
   m_TagString: Enemy
@@ -95,26 +95,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2978850591404561710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5233398447245648621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a82ed0b8770127c4eab32340d91e1262, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 2
-  strength: 2
-  speed: 10
-  homeTag: Home
-  offset: {x: 0, y: 2, z: 0}
-  _target: {fileID: 0}
-  _destination: {fileID: 0}
-  m_NavMeshAgent: {fileID: 8006263014513331716}
 --- !u!195 &8006263014513331716
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -137,3 +117,25 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-1190154303443475819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5233398447245648621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a82ed0b8770127c4eab32340d91e1262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  strength: 0
+  speed: 10
+  homeTag: Home
+  offset: {x: 0, y: 0, z: 0}
+  fireRate: 1
+  _target: {fileID: 0}
+  _destination: {fileID: 8903191935411852312, guid: 251c80f2605ab454e8d3635dbe145412,
+    type: 3}
+  m_NavMeshAgent: {fileID: 8006263014513331716}
