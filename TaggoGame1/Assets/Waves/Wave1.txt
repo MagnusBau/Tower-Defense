@@ -1,0 +1,3 @@
+PAUSE,[time in secounds]S
+DELAY,[time in sevonds]S
+SPAWN,[index of a spawner].[inidex of another spawner].[index of yet another spawner], [number of enemies], [name of enemy]

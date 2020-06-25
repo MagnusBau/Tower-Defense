@@ -7,11 +7,12 @@ public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
 
+    [Header("Wave variables")]
     public float countdown = 5f;
-
     public float timeBetweenEnemies = 1f;
     public int waveCount = 5;
 
+    [Header("Wave setup data")]
     public string enemySpawnerTag = "EnemySpawner";
     public string enemyCounterTag = "EnemyCounter";
     public Transform enemy;
@@ -20,27 +21,24 @@ public class EnemyManager : MonoBehaviour
 
     private EnemySpawner[] enemySpawners;
     private int enemyCount;
+    private FileHandler fileHandler;
+    private int waveNumber = 1;
+    private List<string> wave;
 
-    void Start()
+
+    private void Awake()
     {
-        
-        if (instance == null)
+        if (instance != null)
         {
-            if (GameMaster.instance != null)
-            {
-                instance = GameMaster.instance.GetEnemyManager();
-            }
-            else
-            {
-                Debug.Log("EnemyManager instance is null (GameMaster missing)");
-            }
+            Debug.Log("EnemyManager Duplicate!!!");
         }
         else
         {
-            Debug.Log("EnemyManager Duplicate");
+            instance = this;
         }
-        
-
+    }
+    void Start()
+    {
         GameObject[] enemySpawnersTemp = GameObject.FindGameObjectsWithTag(enemySpawnerTag);
         enemySpawners = new EnemySpawner[enemySpawnersTemp.Length];
         for (int i = 0; i < enemySpawners.Length; i++)
@@ -51,6 +49,8 @@ public class EnemyManager : MonoBehaviour
 
         enemyCountText = GameObject.FindGameObjectWithTag(enemyCounterTag).GetComponent<Text>() as Text;
         enemyCountText.text = "Enemies Left: " + enemyCount;
+        fileHandler = new FileHandler();
+        wave = fileHandler.ReadWave(waveNumber);
         
     }
 
@@ -82,15 +82,15 @@ public class EnemyManager : MonoBehaviour
         spawner.SpawnEnemy(enemy);
     }
 
-    public void ReportDeath()
-    {
-        //enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-    }
-
     public void ReportEnemyDeath()
     {
         enemyCount--;
 
         Debug.Log("enemycount " + enemyCount);
+    }
+
+    public void SpawnWave()
+    {
+
     }
 }

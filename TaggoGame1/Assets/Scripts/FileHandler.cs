@@ -1,61 +1,53 @@
 ﻿using System;
-using System.Xml;
-using System.Xml.Serialization;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class FileHandler
+class FileHandler
 {
-    public void SerializeObject<T>(T serializableObject, string fileName)
-    {
-        if (serializableObject == null) { return; }
 
+    private List<string> wave;
+    public List<string> ReadWave(int waveNumber)
+    {
+        wave = new List<string>();
         try
         {
-            XmlDocument xmlDocument = new XmlDocument();
-            XmlSerializer serializer = new XmlSerializer(serializableObject.GetType());
-            using (MemoryStream stream = new MemoryStream())
+            // The using statement also closes the StreamReader.
+            using (StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "/Assets/Waves/Wave" + waveNumber.ToString() + ".txt"))
             {
-                serializer.Serialize(stream, serializableObject);
-                stream.Position = 0;
-                xmlDocument.Load(stream);
-                xmlDocument.Save(fileName);
-            }
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError(ex);
-        }
-    }
-
-    public T DeSerializeObject<T>(string fileName)
-    {
-        if (string.IsNullOrEmpty(fileName)) { return default(T); }
-
-        T objectOut = default(T);
-
-        try
-        {
-            XmlDocument xmlDocument = new XmlDocument();
-            xmlDocument.Load(fileName);
-            string xmlString = xmlDocument.OuterXml;
-
-            using (StringReader read = new StringReader(xmlString))
-            {
-                Type outType = typeof(T);
-
-                XmlSerializer serializer = new XmlSerializer(outType);
-                using (XmlReader reader = new XmlTextReader(read))
+                string line;
+                while ((line = sr.ReadLine()) != null)
                 {
-                    objectOut = (T)serializer.Deserialize(reader);
+                    wave.Add(line);
                 }
             }
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            Debug.LogError(ex);
+            Debug.LogError("The file could not be read:");
+            Debug.LogError(e.Message);
         }
+        //Console.ReadKey();
+        return wave;
+    }
 
-        return objectOut;
+    public void WriteWave(int waveNumber, string[] waveData)
+    {
+        try
+        {
+            using (StreamWriter sw = File.CreateText(Directory.GetCurrentDirectory() + "/Assets/Waves/Wave" + waveNumber.ToString() + ".txt"))
+            {
+
+                foreach (string s in waveData)
+                {
+                    sw.WriteLine(s);
+                }
+            }
+        }
+        catch(Exception e)
+        {
+            Debug.LogError("Could not Write to file:");
+            Debug.LogError(e.Message);
+        }
     }
 }
