@@ -1,3 +1,8 @@
-PAUSE,[time in secounds]S
-DELAY,[time in sevonds]S
-SPAWN,[index of a spawner].[inidex of another spawner].[index of yet another spawner], [number of enemies], [name of enemy]
+DELAY,1000
+SPAWN,0.1,1,enemy
+SPAWN,0.1,1,enemy
+SPAWN,0.1,1,enemy
+SPAWN,2,1,enemy
+SPAWN,2,1,enemy
+PAUSE, 5000
+SPAWN,0.1,1,stronkEnemy
