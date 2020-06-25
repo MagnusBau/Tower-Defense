@@ -11,7 +11,7 @@ public class Home : MonoBehaviour
     BuildManager buildManager;
 
 
-    public Text hpCounterText;
+    public TextMesh hpCounterText;
 
     void Start()
     {
