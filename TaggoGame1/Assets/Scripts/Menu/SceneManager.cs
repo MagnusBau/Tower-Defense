@@ -10,7 +10,7 @@ public class SceneManager : MonoBehaviour
         Application.LoadLevel(_sceneNumber);
     }
 
-    public void Quit()
+    public void QuitGame()
     {
         Debug.Log("quitting game");
         Application.Quit();
