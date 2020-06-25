@@ -27,7 +27,6 @@ class FileHandler
             Debug.LogError("The file could not be read:");
             Debug.LogError(e.Message);
         }
-        //Console.ReadKey();
         return wave;
     }
 

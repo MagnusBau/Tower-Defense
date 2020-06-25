@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -24,6 +26,15 @@ public class EnemyManager : MonoBehaviour
     private FileHandler fileHandler;
     private int waveNumber = 1;
     private List<string> wave;
+    private float delay = 1f;
+    private float delayStandard = 1f;
+    private List<string> spawnerIndexes;
+    private int waveLength;
+    private int currentLineIndex = 0;
+    private List<string> currentLine;
+    private string switchCase;
+    private Transform selectedEnemy;
+    private bool waveOngoing = true;
 
 
     private void Awake()
@@ -50,34 +61,27 @@ public class EnemyManager : MonoBehaviour
         enemyCountText = GameObject.FindGameObjectWithTag(enemyCounterTag).GetComponent<Text>() as Text;
         enemyCountText.text = "Enemies Left: " + enemyCount;
         fileHandler = new FileHandler();
-        wave = fileHandler.ReadWave(waveNumber);
-        
+        ReadNextWave();
     }
 
     void Update()
     {
         enemyCountText.text = "Enemies Left: " + enemyCount;
-        if (countdown <= 0 && waveCount > 0)
+        delay -= Time.deltaTime;
+        if (waveOngoing)
         {
-            foreach (EnemySpawner enemySpawner in enemySpawners)
-            {
-                int rnd = Random.Range(0, 10) + 1;
-                if (rnd > 9)
-                {
-                    SpawnEnemy(enemySpawner, stronkEnemy);
-                }
-                else
-                {
-                    SpawnEnemy(enemySpawner, enemy);
-                }
-            }
-            waveCount--;
-            countdown = timeBetweenEnemies;
+            SpawnWave();
         }
-        countdown -= Time.deltaTime;
     }
 
-    void SpawnEnemy(EnemySpawner spawner, Transform enemy)
+    public void ReadNextWave()
+    {
+        wave = fileHandler.ReadWave(waveNumber);
+        waveLength = wave.Count - 1;
+        waveNumber++;
+    }
+
+    void SpawnSingleEnemy(EnemySpawner spawner, Transform enemy)
     {
         spawner.SpawnEnemy(enemy);
     }
@@ -93,8 +97,64 @@ public class EnemyManager : MonoBehaviour
         Debug.Log("enemycount " + enemyCount);
     }
 
+    private Transform SelectEnemy()
+    {
+        switchCase = currentLine[3];
+        switch (switchCase)
+        {
+            case "enemy":
+                return enemy;
+            case "stronkEnemy":
+                return stronkEnemy;
+            default:
+                return enemy;
+        }
+    }
+    private void Spawn()
+    {
+        selectedEnemy = SelectEnemy();
+        spawnerIndexes = currentLine[1].Split('.').ToList();
+        foreach (string spawner in spawnerIndexes)
+        {
+            int numberOfEnemies = int.Parse(currentLine[2]);
+            for (int i = 0; i < numberOfEnemies; i++)
+            {
+                SpawnSingleEnemy(enemySpawners[int.Parse(spawner)], selectedEnemy);
+            }
+        }
+    }
     public void SpawnWave()
     {
-
+        if(currentLineIndex <= waveLength)
+        {
+            if(delay <= 0f)
+            {
+                currentLine = wave[currentLineIndex].Split(',').ToList();
+                switchCase = currentLine[0];
+                switch (switchCase)
+                {
+                    case "PAUSE":
+                        delay = int.Parse(currentLine[1]) / 1000;
+                        break;
+                    case "DELAY":
+                        delayStandard = int.Parse(currentLine[1]) / 1000;
+                        delay = delayStandard;
+                        break;
+                    case "SPAWN":
+                        Spawn();
+                        delay = delayStandard;
+                        break;
+                    default:
+                        Debug.LogError("Error interpreting wave file");
+                        break;
+                }
+                currentLineIndex++;
+            }
+        }
+        else
+        {
+            waveOngoing = false;
+            ReadNextWave();
+        }
     }
 }
