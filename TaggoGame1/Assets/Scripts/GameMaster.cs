@@ -46,4 +46,9 @@ public class GameMaster : MonoBehaviour
     {
         return buildManager;
     }
+
+    public void EndGame()
+    {
+        Application.LoadLevel(0);
+    }
 }
