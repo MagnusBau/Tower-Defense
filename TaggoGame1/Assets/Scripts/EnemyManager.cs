@@ -22,7 +22,7 @@ public class EnemyManager : MonoBehaviour
     public Text enemyCountText;
 
     private EnemySpawner[] enemySpawners;
-    private int enemyCount;
+    private int enemyCount = 0;
     private FileHandler fileHandler;
     private int waveNumber = 1;
     private List<string> wave;
@@ -56,8 +56,6 @@ public class EnemyManager : MonoBehaviour
         {
             enemySpawners[i] = enemySpawnersTemp[i].GetComponent<EnemySpawner>();
         }
-        enemyCount = waveCount * enemySpawners.Length;
-
         enemyCountText = GameObject.FindGameObjectWithTag(enemyCounterTag).GetComponent<Text>() as Text;
         enemyCountText.text = "Enemies Left: " + enemyCount;
         fileHandler = new FileHandler();
@@ -84,6 +82,7 @@ public class EnemyManager : MonoBehaviour
     void SpawnSingleEnemy(EnemySpawner spawner, Transform enemy)
     {
         spawner.SpawnEnemy(enemy);
+        enemyCount++;
     }
 
     public void ReportEnemyDeath()
