@@ -137,5 +137,6 @@ MonoBehaviour:
   fireRate: 1
   fireRadius: 1
   _target: {fileID: 0}
-  _destination: {fileID: 0}
+  _destination: {fileID: 8903191935411852312, guid: 251c80f2605ab454e8d3635dbe145412,
+    type: 3}
   m_NavMeshAgent: {fileID: 8006263014513331716}
