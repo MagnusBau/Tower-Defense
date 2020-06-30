@@ -90,7 +90,7 @@ public class EnemyManager : MonoBehaviour
         enemyCount--;
         if(enemyCount <= 0)
         {
-            GameMaster.instance.EndGame();
+            GameMaster.instance.Completelevel();
         }
 
         Debug.Log("enemycount " + enemyCount);

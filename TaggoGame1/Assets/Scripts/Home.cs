@@ -37,6 +37,10 @@ public class Home : MonoBehaviour
             GetComponent<Renderer>().material.color = destroyedColor;
         }
         hpCounterText.text = hp.ToString();
+        if(hp < 0)
+        {
+            GameMaster.instance.GameOver();
+        }
     }
 
     public void GenerateMoney()
