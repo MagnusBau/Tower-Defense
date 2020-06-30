@@ -62,12 +62,12 @@ public class GameMaster : MonoBehaviour
         }
     }
 
-    /*
+    
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    */
+    
 
     public EnemyManager GetEnemyManager()
     {
@@ -78,10 +78,10 @@ public class GameMaster : MonoBehaviour
     {
         return buildManager;
     }
-/*
+
     public void EndGame()
     {
         Application.LoadLevel(0);
     }
-    */
+    
 }
