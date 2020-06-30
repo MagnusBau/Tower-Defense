@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
@@ -37,6 +38,37 @@ public class GameMaster : MonoBehaviour
         
     }
 
+    public GameObject completLevelUI;
+
+    public void Completelevel()
+    {
+        Debug.Log("LVL WON ");
+        completLevelUI.SetActive(true);
+    }
+
+    bool gameHasEnded = false;
+    //public float restartDelay = 1f;
+
+    public GameObject GameOverUI;
+    public void GameOver()
+    {
+        if (gameHasEnded == false)
+        {
+            GameOverUI.SetActive(true);
+            gameHasEnded = true;
+            Debug.Log("Game over!");
+            //Invoke("Restart", restartDelay);
+            //restart()
+        }
+    }
+
+    
+    void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    
+
     public EnemyManager GetEnemyManager()
     {
         return enemyManager;
@@ -51,4 +83,5 @@ public class GameMaster : MonoBehaviour
     {
         Application.LoadLevel(0);
     }
+    
 }
