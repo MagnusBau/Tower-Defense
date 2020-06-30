@@ -91,6 +91,7 @@ public class EnemyManager : MonoBehaviour
         }
         waveLength = wave.Count - 1;
         currentLineIndex = 0;
+ 
     }
 
     void SpawnSingleEnemy(EnemySpawner spawner, Transform enemy)
