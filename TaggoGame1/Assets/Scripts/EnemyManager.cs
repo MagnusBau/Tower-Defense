@@ -77,7 +77,7 @@ public class EnemyManager : MonoBehaviour
         }
         else if (enemyCount <= 0)
         {
-            //endscreen
+            GameMaster.instance.Completelevel();
             //GameMaster.instance.EndGame();
         }
     }
