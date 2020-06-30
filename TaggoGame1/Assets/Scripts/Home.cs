@@ -9,6 +9,7 @@ public class Home : MonoBehaviour
     public float generationRate = 0.5f;
     public float cooldown;
     BuildManager buildManager;
+    EnemyManager enemyManager;
 
 
     public TextMesh hpCounterText;
@@ -17,15 +18,19 @@ public class Home : MonoBehaviour
     {
         hpCounterText.text = hp.ToString();
         buildManager = BuildManager.instance;
+        enemyManager = EnemyManager.instance;
         cooldown = 1 / generationRate;
     }
 
     private void Update()
     {
-        cooldown -= Time.deltaTime;
-        if(cooldown <= 0f)
+        if(enemyManager.GetEnemyCount() > 0 || enemyManager.GetWaveSpawning())
         {
-            GenerateMoney();
+            cooldown -= Time.deltaTime;
+            if (cooldown <= 0f)
+            {
+                GenerateMoney();
+            }
         }
     }
     public void Damage(float points)
