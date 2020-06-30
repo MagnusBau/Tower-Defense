@@ -1,2 +1,8 @@
-data3
-data4
+DELAY,1000
+SPAWN,0.1,2,enemy
+SPAWN,0.1,1,enemy
+SPAWN,0.1,1,enemy
+SPAWN,2,1,enemy
+SPAWN,2,1,enemy
+PAUSE, 5000
+SPAWN,0.1,1,stronkEnemy

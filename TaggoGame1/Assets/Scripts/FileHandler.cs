@@ -49,4 +49,11 @@ class FileHandler
             Debug.LogError(e.Message);
         }
     }
+
+    public int FindWaveCount()
+    {
+        DirectoryInfo dir = new System.IO.DirectoryInfo(Directory.GetCurrentDirectory() + "/Assets/Waves/");
+        //divide by 2 because of .meta files
+        return dir.GetFiles().Length / 2;
+    }
 }
