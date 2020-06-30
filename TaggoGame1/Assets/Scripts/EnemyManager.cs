@@ -1,40 +1,36 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.VFX;
 
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
 
-    [Header("Wave variables")]
-    public float countdown = 5f;
-    public float timeBetweenEnemies = 1f;
-    public int waveCount = 5;
-
     [Header("Wave setup data")]
     public string enemySpawnerTag = "EnemySpawner";
     public string enemyCounterTag = "EnemyCounter";
+    public string nextWaveButtonTag = "NextWaveButton";
     public Transform enemy;
     public Transform stronkEnemy;
     public Text enemyCountText;
+    public GameObject nextWaveButton;
 
     private EnemySpawner[] enemySpawners;
-    private int enemyCount = 0;
     private FileHandler fileHandler;
-    private int waveNumber = 1;
     private List<string> wave;
+    private List<string> spawnerIndexes;
+    private List<string> currentLine;
+    private Transform selectedEnemy;
     private float delay = 1f;
     private float delayStandard = 1f;
-    private List<string> spawnerIndexes;
+    private int currentWave = 0;
+    private int enemyCount = 0;
     private int waveLength;
     private int currentLineIndex = 0;
-    private List<string> currentLine;
+    private int numberOfWaves;
     private string switchCase;
-    private Transform selectedEnemy;
-    private bool waveOngoing = true;
+    private bool waveSpawning = false;
 
 
     private void Awake()
@@ -57,8 +53,10 @@ public class EnemyManager : MonoBehaviour
             enemySpawners[i] = enemySpawnersTemp[i].GetComponent<EnemySpawner>();
         }
         enemyCountText = GameObject.FindGameObjectWithTag(enemyCounterTag).GetComponent<Text>() as Text;
+        nextWaveButton = GameObject.FindGameObjectWithTag(nextWaveButtonTag);
         enemyCountText.text = "Enemies Left: " + enemyCount;
         fileHandler = new FileHandler();
+        numberOfWaves = fileHandler.FindWaveCount();
         ReadNextWave();
     }
 
@@ -66,17 +64,33 @@ public class EnemyManager : MonoBehaviour
     {
         enemyCountText.text = "Enemies Left: " + enemyCount;
         delay -= Time.deltaTime;
-        if (waveOngoing)
+        if(currentWave <= numberOfWaves)
         {
-            SpawnWave();
+            if (waveSpawning)
+            {
+                SpawnWave();
+            }
+            else if (enemyCount <= 0)
+            {
+                nextWaveButton.SetActive(true);
+            }
+        }
+        else if (enemyCount <= 0)
+        {
+            //endscreen
+            GameMaster.instance.EndGame();
         }
     }
 
     public void ReadNextWave()
     {
-        wave = fileHandler.ReadWave(waveNumber);
+        currentWave++;
+        if(currentWave <= numberOfWaves)
+        {
+            wave = fileHandler.ReadWave(currentWave);
+        }
         waveLength = wave.Count - 1;
-        waveNumber++;
+        currentLineIndex = 0;
     }
 
     void SpawnSingleEnemy(EnemySpawner spawner, Transform enemy)
@@ -88,14 +102,19 @@ public class EnemyManager : MonoBehaviour
     public void ReportEnemyDeath()
     {
         enemyCount--;
-        if(enemyCount <= 0)
-        {
-            GameMaster.instance.EndGame();
-        }
 
         Debug.Log("enemycount " + enemyCount);
     }
 
+    public void NextWave()
+    {
+        waveSpawning = true;
+        nextWaveButton.SetActive(false);
+    }
+
+    /*
+     * Selects what enemy to spawn
+     */
     private Transform SelectEnemy()
     {
         switchCase = currentLine[3];
@@ -109,7 +128,11 @@ public class EnemyManager : MonoBehaviour
                 return enemy;
         }
     }
-    private void Spawn()
+
+    /*
+     * Used to spawn enemies from a single line in the wave file
+     */
+    private void SpawnLine()
     {
         selectedEnemy = SelectEnemy();
         spawnerIndexes = currentLine[1].Split('.').ToList();
@@ -122,6 +145,10 @@ public class EnemyManager : MonoBehaviour
             }
         }
     }
+
+    /*
+     * Method used to spawn an entire wave
+     */
     public void SpawnWave()
     {
         if(currentLineIndex <= waveLength)
@@ -140,7 +167,7 @@ public class EnemyManager : MonoBehaviour
                         delay = delayStandard;
                         break;
                     case "SPAWN":
-                        Spawn();
+                        SpawnLine();
                         delay = delayStandard;
                         break;
                     default:
@@ -152,8 +179,18 @@ public class EnemyManager : MonoBehaviour
         }
         else
         {
-            waveOngoing = false;
+            waveSpawning = false;
             ReadNextWave();
         }
+    }
+
+    public int GetEnemyCount()
+    {
+        return enemyCount;
+    }
+
+    public bool GetWaveSpawning()
+    {
+        return waveSpawning;
     }
 }
