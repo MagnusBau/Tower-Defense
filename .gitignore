@@ -5,8 +5,7 @@
 TaggoGame1/Library/
 TaggoGame1/Temp/
 TaggoGame1/Build/
-/[Oo]bj/
-/[Bb]uilds/
+TaggoGame1/Obj/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
@@ -83,3 +82,4 @@ TaggoGame1/Temp/UnityTempFile-4db42c0145a75f842be9bfddd378d9d4
 TaggoGame1/Temp/UnityLockfile
 TaggoGame1/Library/EditorInstance.json
 TaggoGame1/Library/StateCache/SceneView/cc991c-mainStage.json
+TaggoGame1/ProjectSettings/GraphicsSettings.asset
